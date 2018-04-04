@@ -1,5 +1,26 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #ced4da;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+.color-swatch {
+  background-color: inherit;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  -webkit-appearance: none;
+}
+.color-swatch::-webkit-color-swatch-wrapper {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.color-swatch::-webkit-color-swatch {
+  padding: 0;
+  border: none;
 }
