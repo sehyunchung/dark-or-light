@@ -2,8 +2,11 @@ import React from "react";
 
 const ExampleText = props => {
   return (
-    <div style={{ background: props.bgColor, color: props.txtColor }}>
-      Example Text
+    <div
+      className="example-text"
+      style={{ background: props.bgColor, color: props.txtColor }}
+    >
+      {`${props.result}!`}
     </div>
   );
 };

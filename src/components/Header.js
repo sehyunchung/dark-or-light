@@ -1,7 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 
 const Header = props => {
-  return <div>{props.title}</div>;
+  return (
+    <h1 style={{ color: props.txtColor }} className="header">
+      {props.title}
+    </h1>
+  );
 };
 
 export default Header;
