@@ -1,19 +1,24 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   background-color: #f8f9fa;
   color: #ced4da;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
+  text-align: center;
 }
 .color-swatch {
   background-color: inherit;
   border: 0;
   outline: 0;
   padding: 0;
+  width: 100%;
   -webkit-appearance: none;
+  height: 20vh;
+  cursor: pointer;
 }
 .color-swatch::-webkit-color-swatch-wrapper {
   padding: 0;
@@ -23,4 +28,25 @@ body {
 .color-swatch::-webkit-color-swatch {
   padding: 0;
   border: none;
+}
+h1 {
+  margin: 0 auto;
+  font-weight: normal;
+}
+.header {
+  position: absolute;
+  left: 50%;
+  top: 10vh;
+  transform: translateX(-50%) translateY(-50%);
+  display: inline-block;
+  margin: 0 auto;
+}
+.example-text {
+  /* position: absolute; */
+  height: 80vh;
+  width: 100%;
+  line-height: 80vh;
+  font-size: 4em;
+  margin-top: -1vh;
+  text-transform: capitalize;
 }
