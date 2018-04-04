@@ -35,7 +35,8 @@ const getRgb = hex => {
 class App extends Component {
   state = {
     title: "brain.js color test",
-    color: "#f8f9fa"
+    bgColor: "#f8f9fa",
+    txtColor: "white"
   };
 
   handleColorChange = e => {
@@ -44,7 +45,8 @@ class App extends Component {
     const result = brain.likely(rgb, network);
     console.log(result);
     this.setState({
-      color: e.target.value
+      bgColor: e.target.value,
+      txtColor: result === "dark" ? "#f8f9fa" : "#343a40"
     });
   };
 
@@ -53,10 +55,13 @@ class App extends Component {
       <Fragment>
         <Header title={this.state.title} />
         <ColorSwatch
-          color={this.state.color}
+          color={this.state.bgColor}
           handleColorChange={this.handleColorChange}
         />
-        <ExampleText color={this.state.color} />
+        <ExampleText
+          bgColor={this.state.bgColor}
+          txtColor={this.state.txtColor}
+        />
       </Fragment>
     );
   }
