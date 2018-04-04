@@ -45,9 +45,7 @@ class App extends Component {
 
   handleColorChange = e => {
     const rgb = getRgb(e.target.value);
-    console.log(rgb);
     const result = brain.likely(rgb, network);
-    console.log(result);
     this.setState({
       result,
       bgColor: e.target.value,
