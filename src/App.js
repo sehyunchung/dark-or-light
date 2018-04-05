@@ -4,6 +4,7 @@ import brain from "brain.js";
 import Header from "./components/Header";
 import ColorSwatch from "./components/ColorSwatch";
 import ExampleText from "./components/ExampleText";
+import ResetButton from "./components/ResetButton";
 
 const network = new brain.NeuralNetwork();
 network.train([
@@ -60,6 +61,10 @@ class App extends Component {
     });
   };
 
+  handleReset = () => {
+    this.setState(initialState);
+  };
+
   render() {
     return (
       <Fragment>
@@ -74,6 +79,7 @@ class App extends Component {
           txtColor={this.state.txtColor}
           result={this.state.result}
         />
+        <ResetButton onClick={this.handleReset} />
       </Fragment>
     );
   }
