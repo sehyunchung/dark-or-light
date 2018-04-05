@@ -7,7 +7,6 @@ const ColorSwatch = props => {
       type="color"
       value={props.color}
       onChange={props.handleColorChange}
-      style={{ borderBottom: `solid 1px ${props.txtColor}` }}
     />
   );
 };

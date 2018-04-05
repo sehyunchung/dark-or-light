@@ -29,24 +29,26 @@ body {
   padding: 0;
   border: none;
 }
-h1 {
-  margin: 0 auto;
-  font-weight: normal;
-}
 .header {
+  margin: 0 auto;
+  display: inline-block;
+  font-weight: normal;
+  font-size: 4rem;
   position: absolute;
   left: 50%;
-  top: 10vh;
+  top: 20%;
   transform: translateX(-50%) translateY(-50%);
-  display: inline-block;
-  margin: 0 auto;
+  word-break: keep-all;
 }
 .example-text {
-  /* position: absolute; */
-  height: 80vh;
-  width: 100%;
-  line-height: 80vh;
-  font-size: 8em;
-  margin-top: -1vh;
+  position: absolute;
+  margin: 0 auto;
+  display: inline-block;
+  bottom: 35vh;
+  left: 50vw;
+  transform: translateX(-50%) translateY(50%);
+  font-size: 16rem;
   text-transform: capitalize;
+  word-break: keep-all;
+}
 }
