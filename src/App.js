@@ -38,13 +38,15 @@ const getRgb = hex => {
     : null;
 };
 
+const initialState = {
+  title: "배경색이...",
+  bgColor: "#f8f9fa",
+  txtColor: "#ced4da",
+  result: null
+};
+
 class App extends Component {
-  state = {
-    title: "Background color is...",
-    bgColor: "#f8f9fa",
-    txtColor: "#ced4da",
-    result: "?"
-  };
+  state = initialState;
 
   handleColorChange = e => {
     const rgb = getRgb(e.target.value);
