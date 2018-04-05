@@ -16,7 +16,10 @@ network.train([
   { input: { r: 1, g: 0.42, b: 0.52 }, output: { dark: 1 } },
   { input: { r: 0.45, g: 0.5, b: 0.98 }, output: { dark: 1 } },
   { input: { r: 0.22, g: 0.58, b: 0.98 }, output: { dark: 1 } },
-  { input: { r: 0.18, g: 0.56, b: 0.98 }, output: { dark: 1 } }
+  { input: { r: 0.18, g: 0.56, b: 0.98 }, output: { dark: 1 } },
+  { input: { r: 0.98, g: 0.47, b: 0 }, output: { dark: 1 } },
+  { input: { r: 0.12, g: 0.72, b: 0.98 }, output: { dark: 1 } },
+  { input: { r: 0.98, g: 0.58, b: 0.46 }, output: { dark: 1 } }
 ]);
 
 const getRgb = hex => {
@@ -61,6 +64,7 @@ class App extends Component {
         <Header title={this.state.title} txtColor={this.state.txtColor} />
         <ColorSwatch
           color={this.state.bgColor}
+          txtColor={this.state.txtColor}
           handleColorChange={this.handleColorChange}
         />
         <ExampleText
