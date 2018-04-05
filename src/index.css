@@ -1,23 +1,24 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Black+Han+Sans");
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Black Han Sans", Arial, sans-serif;
   background-color: #f8f9fa;
   color: #ced4da;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
+  height: 100vh;
   text-align: center;
+  overflow: hidden;
 }
 .color-swatch {
   background-color: inherit;
+  -webkit-appearance: none;
   border: 0;
   outline: 0;
   padding: 0;
   width: 100%;
-  -webkit-appearance: none;
-  height: 20vh;
+  height: 100vh;
   cursor: pointer;
 }
 .color-swatch::-webkit-color-swatch-wrapper {
@@ -29,24 +30,40 @@ body {
   padding: 0;
   border: none;
 }
-h1 {
-  margin: 0 auto;
-  font-weight: normal;
-}
 .header {
+  margin: 0 auto;
+  display: inline-block;
+  font-weight: normal;
+  font-size: 4rem;
   position: absolute;
   left: 50%;
-  top: 10vh;
+  top: 20%;
   transform: translateX(-50%) translateY(-50%);
-  display: inline-block;
-  margin: 0 auto;
+  word-break: keep-all;
 }
 .example-text {
-  /* position: absolute; */
-  height: 80vh;
-  width: 100%;
-  line-height: 80vh;
-  font-size: 8em;
-  margin-top: -1vh;
+  position: absolute;
+  margin: 0 auto;
+  display: inline-block;
+  bottom: 35vh;
+  left: 50vw;
+  transform: translateX(-50%) translateY(50%);
+  font-size: 16rem;
   text-transform: capitalize;
+  word-break: keep-all;
+}
+.logo-emoji {
+  width: 300px;
+}
+.reset-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 4px 6px 4px 4px;
+  border-top-right-radius: 6px;
+  cursor: pointer;
+  background: #f8f9fa;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }

@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = props => {
   return (
-    <h1 style={{ color: props.txtColor }} className="header">
+    <h1 className="header" style={{ color: props.txtColor }}>
       {props.title}
     </h1>
   );

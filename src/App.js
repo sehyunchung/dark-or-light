@@ -4,6 +4,7 @@ import brain from "brain.js";
 import Header from "./components/Header";
 import ColorSwatch from "./components/ColorSwatch";
 import ExampleText from "./components/ExampleText";
+import ResetButton from "./components/ResetButton";
 
 const network = new brain.NeuralNetwork();
 network.train([
@@ -16,7 +17,10 @@ network.train([
   { input: { r: 1, g: 0.42, b: 0.52 }, output: { dark: 1 } },
   { input: { r: 0.45, g: 0.5, b: 0.98 }, output: { dark: 1 } },
   { input: { r: 0.22, g: 0.58, b: 0.98 }, output: { dark: 1 } },
-  { input: { r: 0.18, g: 0.56, b: 0.98 }, output: { dark: 1 } }
+  { input: { r: 0.18, g: 0.56, b: 0.98 }, output: { dark: 1 } },
+  { input: { r: 0.98, g: 0.47, b: 0 }, output: { dark: 1 } },
+  { input: { r: 0.12, g: 0.72, b: 0.98 }, output: { dark: 1 } },
+  { input: { r: 0.98, g: 0.58, b: 0.46 }, output: { dark: 1 } }
 ]);
 
 const getRgb = hex => {
@@ -35,13 +39,15 @@ const getRgb = hex => {
     : null;
 };
 
+const initialState = {
+  title: "배경색이...",
+  bgColor: "#f8f9fa",
+  txtColor: "#ced4da",
+  result: null
+};
+
 class App extends Component {
-  state = {
-    title: "Background color is...",
-    bgColor: "#f8f9fa",
-    txtColor: "#ced4da",
-    result: "?"
-  };
+  state = initialState;
 
   handleColorChange = e => {
     const rgb = getRgb(e.target.value);
@@ -53,12 +59,17 @@ class App extends Component {
     });
   };
 
+  handleReset = () => {
+    this.setState(initialState);
+  };
+
   render() {
     return (
       <Fragment>
         <Header title={this.state.title} txtColor={this.state.txtColor} />
         <ColorSwatch
           color={this.state.bgColor}
+          txtColor={this.state.txtColor}
           handleColorChange={this.handleColorChange}
         />
         <ExampleText
@@ -66,6 +77,7 @@ class App extends Component {
           txtColor={this.state.txtColor}
           result={this.state.result}
         />
+        <ResetButton onClick={this.handleReset} />
       </Fragment>
     );
   }
